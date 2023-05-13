@@ -7,14 +7,13 @@ using System.Text;
 using System.Threading;
 using Server.Model;
 using Server.Model.Events;
-using Server.Model.Exceptions;
 
 namespace Server.Application
 {
     public class Server : IDisposable
     {
-        public event ServerEvent ClientConnected;
-        public event ServerEvent ClientDisconnected;
+        public event ServerClientConnectionEvent ClientConnected;
+        public event ServerClientConnectionEvent ClientDisconnected;
         
         
         private Socket _server;
@@ -65,7 +64,7 @@ namespace Server.Application
                 
                 Console.WriteLine($"Client {ipEndpoint.Address} connected at {connectedAt}");
 
-                ClientConnected?.Invoke(new ServerClientEventArgs(ipEndpoint, connectedAt));
+                ClientConnected?.Invoke(ServerClientConnectionEventArgs.Create(ipEndpoint, connectedAt));
                 
                 var connectionThread = new Thread(() => HandleConnection(socket));
             
@@ -103,10 +102,9 @@ namespace Server.Application
                     var disconnectedAt = DateTime.Now.ToLongTimeString();
                     
                     Console.WriteLine("client disconnected");   
-                    ClientDisconnected?.Invoke(new ServerClientEventArgs(
-                        ipEndpoint, 
-                        disconnectedAt
-                        ));
+                    ClientDisconnected?.Invoke(ServerClientConnectionEventArgs
+                        .Create(ipEndpoint, disconnectedAt)
+                    );
                 }
             }
             

@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{9C37AEA0-ECC2-4F22-98D1-EA7ADA7CA9E7}</ProjectGuid>
+        <ProjectGuid>{F2472F8B-76F5-4746-8DE0-82F878D8CC8C}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Server.Model</RootNamespace>
-        <AssemblyName>Server.Model</AssemblyName>
+        <RootNamespace>Client.Model</RootNamespace>
+        <AssemblyName>Client.Model</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -38,8 +38,8 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Events\ServerClientConnectionEventArgs.cs" />
-        <Compile Include="Events\ServerClientConnectionDelegate.cs" />
+        <Compile Include="Events\ClientConnectionDelegate.cs" />
+        <Compile Include="Events\ClientConnectionEventArgs.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
