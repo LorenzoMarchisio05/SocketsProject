@@ -1,0 +1,6 @@
+/Users/lorenzomarchisio/Desktop/Server/Server.Model/bin/Debug/Server.Model.dll
+/Users/lorenzomarchisio/Desktop/Server/Server.Model/bin/Debug/Server.Model.pdb
+/Users/lorenzomarchisio/Desktop/Server/Server.Model/obj/Debug/Server.Model.csproj.AssemblyReference.cache
+/Users/lorenzomarchisio/Desktop/Server/Server.Model/obj/Debug/Server.Model.csproj.CoreCompileInputs.cache
+/Users/lorenzomarchisio/Desktop/Server/Server.Model/obj/Debug/Server.Model.dll
+/Users/lorenzomarchisio/Desktop/Server/Server.Model/obj/Debug/Server.Model.pdb
