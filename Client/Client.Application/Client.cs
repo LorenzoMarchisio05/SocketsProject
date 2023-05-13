@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Client.Application
         public event ClientConnectionEvent Connected;
         public event ClientConnectionEvent Disconnected;
         
-        private Socket _client;
+        private readonly Socket _client;
 
         private readonly IPAddress _ip;
 
@@ -39,12 +40,9 @@ namespace Client.Application
                 return;
             }
             
-            Connected?.Invoke(ClientConnectionEventArgs
-                .Create(_endpoint, DateTime.Now.ToLongTimeString())
-            );
-            
             Console.WriteLine($"Connected to port: {_port}");
             
+            SignalClientConnection();
             SendLoop();
         }
 
@@ -78,17 +76,14 @@ namespace Client.Application
                 {
                     Console.Write("enter a message: ");
                     var message = Console.ReadLine();
-                    
                     var bytes = Encoding.UTF8.GetBytes(message);
-
                     _client.Send(bytes);
 
                     var responseBytes = new byte[1024];
                     var receivedBytes = _client.Receive(responseBytes);
                     Array.Resize(ref responseBytes, receivedBytes);
-
+                    
                     var response = Encoding.UTF8.GetString(responseBytes);
-
                     Console.WriteLine(response);
                 }
             }
@@ -96,20 +91,26 @@ namespace Client.Application
             {
                 if (!_client.Connected)
                 {
-                    Disconnected?.Invoke(ClientConnectionEventArgs
-                        .Create(_endpoint, DateTime.Now.ToLongTimeString())
-                    );
+                    SignalClientDisconnection();
                 }
             }
-            
-            
-            
+        }
+        
+        private void SignalClientConnection()
+        {
+            Connected?.Invoke(ClientConnectionEventArgs
+                .Create(_endpoint, DateTime.Now.ToLongTimeString())
+            );
+        }
+        
+        private void SignalClientDisconnection()
+        {
+            Disconnected?.Invoke(ClientConnectionEventArgs
+                .Create(_endpoint, DateTime.Now.ToLongTimeString())
+            );
         }
 
-        public void Dispose()
-        {
-            _client?.Dispose();
-        }
+        public void Dispose() => _client?.Dispose();
 
         ~Client() => Dispose();
     }

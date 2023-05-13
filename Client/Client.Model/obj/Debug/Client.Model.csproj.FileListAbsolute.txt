@@ -1,0 +1,6 @@
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/bin/Debug/Client.Model.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/bin/Debug/Client.Model.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/obj/Debug/Client.Model.csproj.AssemblyReference.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/obj/Debug/Client.Model.csproj.CoreCompileInputs.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/obj/Debug/Client.Model.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/obj/Debug/Client.Model.pdb

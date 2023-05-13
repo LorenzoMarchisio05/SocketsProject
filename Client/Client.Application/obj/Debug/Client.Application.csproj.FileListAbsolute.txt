@@ -4,3 +4,12 @@
 /Users/lorenzomarchisio/Desktop/Client/Client.Application/obj/Debug/Client.Application.csproj.CoreCompileInputs.cache
 /Users/lorenzomarchisio/Desktop/Client/Client.Application/obj/Debug/Client.Application.dll
 /Users/lorenzomarchisio/Desktop/Client/Client.Application/obj/Debug/Client.Application.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Client.Application.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Client.Application.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Client.Model.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Client.Model.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.csproj.AssemblyReference.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.csproj.CoreCompileInputs.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.csproj.CopyComplete
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.pdb
