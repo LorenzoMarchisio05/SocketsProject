@@ -43,6 +43,10 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\..\Wheater.Commons\Wheater.Commons\Wheater.Commons.csproj">
+        <Project>{29bd4b35-79bf-4eda-851b-5e667421e283}</Project>
+        <Name>Wheater.Commons</Name>
+      </ProjectReference>
       <ProjectReference Include="..\Client.Application\Client.Application.csproj">
         <Project>{e015696a-5eca-4940-b91f-1e0048c7f6ef}</Project>
         <Name>Client.Application</Name>

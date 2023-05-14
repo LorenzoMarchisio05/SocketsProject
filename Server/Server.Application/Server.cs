@@ -24,12 +24,15 @@ namespace Server.Application
 
         private readonly int _port;
 
-        public Server(IPAddress ip, int port)
+        private Server(IPAddress ip, int port)
         {
             _ip = ip;
             _port = port;
             Setup();
         }
+
+        public static Server Create(IPAddress ip, int port) =>
+            new Server(ip, port);
 
         public void Start() => Accept();
 

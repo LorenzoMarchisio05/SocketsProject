@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using Client.Model.Events;
+using Server.Model;
 
 namespace Client.Application
 {
@@ -12,6 +13,8 @@ namespace Client.Application
     {
         public event ClientConnectionEvent Connected;
         public event ClientConnectionEvent Disconnected;
+
+        private readonly WeatherStationData _station;
         
         private readonly Socket _client;
 
@@ -20,8 +23,8 @@ namespace Client.Application
         private readonly int _port;
 
         private readonly IPEndPoint _endpoint;
-        
-        public Client(IPAddress ip, int port)
+
+        private Client(IPAddress ip, int port)
         {
             _client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             
@@ -30,6 +33,9 @@ namespace Client.Application
             _endpoint = new IPEndPoint(_ip, _port);
         }
 
+        public static Client Create(IPAddress ip, int port) =>
+            new Client(ip, port);
+        
         public void StartConnection()
         {
             var connected = TryConnect();

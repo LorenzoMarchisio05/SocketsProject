@@ -1,21 +1,29 @@
 ﻿using System;
 using System.Net;
 using Client.Model.Events;
+using Server.Model;
 
 namespace Client.Presentation
 {
     internal class Program
     {
+        private static Random _random = new Random(420);
         public static void Main(string[] args)
         {
-            using (var client = new Application.Client(IPAddress.Loopback, 6000))
+            CreateClient("station 1");
+        }
+
+        private static void CreateClient(string stationName)
+        {
+            using (var client = Application.Client.Create(IPAddress.Loopback, 6000))
             {
                 client.Connected += ClientConnectedHandler;
                 client.Disconnected += ClientDisconnectedHandler;
-                
+
                 client.StartConnection();
             }
         }
+
 
         private static void ClientConnectedHandler(ClientConnectionEventArgs e)
         {

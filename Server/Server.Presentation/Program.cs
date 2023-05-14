@@ -8,7 +8,7 @@ namespace Server.Presentation
     {
         public static void Main(string[] args)
         {
-            using (var server = new Application.Server(IPAddress.Loopback, 6000))
+            using (var server = Application.Server.Create(IPAddress.Loopback, 6000))
             {
                 server.ClientConnected += ClientConnectedHandler;
                 server.ClientDisconnected += ClientDisconnetedHandler;
