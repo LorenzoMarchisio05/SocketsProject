@@ -53,7 +53,7 @@ namespace Server.Application
             while (true)
             {
                 var socket = _server.Accept();
-
+                
                 var ipEndpoint = socket.RemoteEndPoint as IPEndPoint;
                 Debug.Assert(ipEndpoint != null, nameof(ipEndpoint) + " != null");
                 var connectedAt = DateTime.Now.ToLongTimeString();
@@ -77,7 +77,7 @@ namespace Server.Application
                     var receivedText = Encoding.UTF8.GetString(dataReceived);
         
                     Console.WriteLine($"received {receivedBytes} bytes: {receivedText}");
-                    
+
                     SendAcknowledgement(socket);
                 }
             }

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Presentation", "Clie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Model", "Client.Model\Client.Model.csproj", "{F2472F8B-76F5-4746-8DE0-82F878D8CC8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wheater.Commons", "..\Wheater.Commons\Wheater.Commons\Wheater.Commons.csproj", "{29BD4B35-79BF-4EDA-851B-5E667421E283}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{F2472F8B-76F5-4746-8DE0-82F878D8CC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2472F8B-76F5-4746-8DE0-82F878D8CC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2472F8B-76F5-4746-8DE0-82F878D8CC8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29BD4B35-79BF-4EDA-851B-5E667421E283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BD4B35-79BF-4EDA-851B-5E667421E283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BD4B35-79BF-4EDA-851B-5E667421E283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BD4B35-79BF-4EDA-851B-5E667421E283}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -10,7 +10,7 @@ namespace Server.Presentation
         {
             using (var server = new Application.Server(IPAddress.Loopback, 6000))
             {
-                server.ClientConnected += ClientConnetedHandler;
+                server.ClientConnected += ClientConnectedHandler;
                 server.ClientDisconnected += ClientDisconnetedHandler;
 
                 server.Start();
@@ -19,7 +19,7 @@ namespace Server.Presentation
             }
         }
 
-        private static void ClientConnetedHandler(ServerClientConnectionEventArgs e)
+        private static void ClientConnectedHandler(ServerClientConnectionEventArgs e)
         {
             Console.WriteLine($"client ({e.IpEndPoint.Address}) connected at: {e.ConnectedAt}");
         }
