@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Server.Application.Interfaces;
 using Server.Model;
 using Server.Model.Events;
 
@@ -14,8 +15,9 @@ namespace Server.Application
     {
         public event ServerClientConnectionEvent ClientConnected;
         public event ServerClientConnectionEvent ClientDisconnected;
-        
-        
+
+        private ILogger<Server> _logger;
+
         private Socket _server;
 
         private byte[] _buffer;
@@ -24,15 +26,16 @@ namespace Server.Application
 
         private readonly int _port;
 
-        private Server(IPAddress ip, int port)
+        private Server(IPAddress ip, int port, ILogger<Server> logger)
         {
             _ip = ip;
             _port = port;
+            _logger = logger;
             Setup();
         }
 
-        public static Server Create(IPAddress ip, int port) =>
-            new Server(ip, port);
+        public static Server Create(IPAddress ip, int port, ILogger<Server> logger) =>
+            new Server(ip, port, logger);
 
         public void Start() => Accept();
 
