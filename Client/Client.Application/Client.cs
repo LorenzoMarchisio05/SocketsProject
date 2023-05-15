@@ -11,30 +11,28 @@ namespace Client.Application
 {
     public sealed class Client : IDisposable
     {
+        public static Random _random = new Random(420);
         public event ClientConnectionEvent Connected;
         public event ClientConnectionEvent Disconnected;
 
-        private readonly WeatherStationData _station;
+        private readonly ClientSettings _settings;
         
         private readonly Socket _client;
 
-        private readonly IPAddress _ip;
-
-        private readonly int _port;
-
         private readonly IPEndPoint _endpoint;
 
-        private Client(IPAddress ip, int port)
+        private Client(IPAddress ip, int port, Action<ClientSettings> config)
         {
+            _settings = new ClientSettings();
+            config(_settings);
+            
             _client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             
-            _ip = ip;
-            _port = port;
-            _endpoint = new IPEndPoint(_ip, _port);
+            _endpoint = new IPEndPoint(ip, port);
         }
 
-        public static Client Create(IPAddress ip, int port) =>
-            new Client(ip, port);
+        public static Client Create(IPAddress ip, int port, Action<ClientSettings> config) =>
+            new Client(ip, port, config);
         
         public void StartConnection()
         {
@@ -46,7 +44,7 @@ namespace Client.Application
                 return;
             }
             
-            Console.WriteLine($"Connected to port: {_port}");
+            Console.WriteLine($"Connected to port: {_endpoint.Port}");
             
             SignalClientConnection();
             SendLoop();
@@ -80,9 +78,13 @@ namespace Client.Application
             {
                 while (_client.Connected)
                 {
-                    Console.Write("enter a message: ");
-                    var message = Console.ReadLine();
-                    var bytes = Encoding.UTF8.GetBytes(message);
+                    var stationData = StationDataGenerator.Generate(_settings);
+
+                    var json = stationData.ToJsonString();
+                    
+                    Console.WriteLine($"Sending: {json}");
+                    
+                    var bytes = Encoding.UTF8.GetBytes(json);
                     _client.Send(bytes);
 
                     var responseBytes = new byte[1024];
@@ -91,6 +93,14 @@ namespace Client.Application
                     
                     var response = Encoding.UTF8.GetString(responseBytes);
                     Console.WriteLine(response);
+
+                    if (_client.Connected)
+                    {
+                        Thread.Sleep(_random.Next(
+                            _settings.MinimumTimeBetweenGenerations,
+                            _settings.MaximumTimeBetweenGenerations)
+                        );
+                    }
                 }
             }
             catch (SocketException)

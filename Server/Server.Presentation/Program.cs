@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using Server.Application;
 using Server.Application.Loggers;
 using Server.Model.Events;
 
@@ -10,8 +11,14 @@ namespace Server.Presentation
         public static void Main(string[] args)
         {
             var logger = new FileLogger<Application.Server>("log.csv");
-            
-            using (var server = Application.Server.Create(IPAddress.Loopback, 6000, logger))
+
+            void ServerSettings(ServerSettings settings)
+            {
+                settings.AddLogger(logger);
+                settings.AddSecondsBetweenLogs(1);
+            }
+
+            using (var server = Application.Server.Create(IPAddress.Loopback, 6000, ServerSettings)) 
             {
                 server.ClientConnected += ClientConnectedHandler;
                 server.ClientDisconnected += ClientDisconnetedHandler;

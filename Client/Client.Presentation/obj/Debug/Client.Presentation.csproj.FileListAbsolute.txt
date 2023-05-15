@@ -18,3 +18,7 @@
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation/obj/Debug/Client.Presentation.csproj.CopyComplete
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation/obj/Debug/Client.Presentation.exe
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation/obj/Debug/Client.Presentation.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation/bin/Debug/Wheater.Commons.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation/bin/Debug/Wheater.Commons.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation/bin/Debug/Newtonsoft.Json.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation/bin/Debug/Newtonsoft.Json.xml

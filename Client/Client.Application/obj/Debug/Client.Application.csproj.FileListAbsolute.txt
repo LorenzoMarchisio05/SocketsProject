@@ -13,3 +13,7 @@
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.csproj.CopyComplete
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.dll
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/obj/Debug/Client.Application.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Wheater.Commons.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Wheater.Commons.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Newtonsoft.Json.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Application/bin/Debug/Newtonsoft.Json.xml
