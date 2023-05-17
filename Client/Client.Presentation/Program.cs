@@ -1,32 +1,51 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
-using Client.Application;
+using System.Threading;
 using Client.Model.Events;
+using Client.Model.Generators;
+using Client.Model.GeneratorsSettings;
 
 namespace Client.Presentation
 {
     internal class Program
-    { 
+    {
         public static void Main(string[] args)
         {
-            CreateClient("station1");
+            /*
+            var stations = Enumerable
+                .Range(1, 10)
+                .Select(id => $"Station {id}");
+
+            foreach (var station in stations)
+            {
+                var thread = new Thread(() => CreateClient(station));
+                thread.Start();
+            }
+            */
+
+            CreateClient("Station 1");
+
         }
+        
 
         private static void CreateClient(string stationName)
         {
-            Action<ClientSettings> clientSettings = settings =>
-            {
-                settings.AddTimeBetweenGenerations(3000, 15_000);
-                settings.AddTemperatureRange(-30, 100);
-                settings.AddStationName(stationName);
-            };
+            var generationSettings = new WeatherStationDataGenerationSettings()
+                .AddTimeBetweenGenerations(3000, 15_000)
+                .AddTemperatureRange(-30, 100)
+                .AddStationName(stationName);
             
-            using (var client = Application.Client.Create(IPAddress.Loopback, 6000, clientSettings))
+            using (var client = Infrastructure.ClientHandler.Create(IPAddress.Loopback, 6000))
             {
                 client.Connected += ClientConnectedHandler;
                 client.Disconnected += ClientDisconnectedHandler;
 
                 client.StartConnection();
+
+                var stationData = StationDataGenerator.Generate(generationSettings);
+
+                client.Send(stationData);
             }
         }
 

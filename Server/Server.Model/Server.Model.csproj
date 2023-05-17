@@ -41,6 +41,7 @@
         <Compile Include="Events\ServerClientConnectionEventArgs.cs" />
         <Compile Include="Events\ServerClientConnectionDelegate.cs" />
         <Compile Include="Interfaces\ILogger.cs" />
+        <Compile Include="Loggers\FileLogger.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

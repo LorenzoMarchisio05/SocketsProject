@@ -20,7 +20,6 @@
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/obj/Debug/Server.Presentation.csproj.CopyComplete
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/obj/Debug/Server.Presentation.exe
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/obj/Debug/Server.Presentation.pdb
-/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Presentation.exe.config
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Wheater.Commons.dll
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Wheater.Commons.pdb
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Newtonsoft.Json.dll
