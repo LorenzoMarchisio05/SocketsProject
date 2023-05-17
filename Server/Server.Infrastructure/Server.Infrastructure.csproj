@@ -67,6 +67,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="AdonetController.cs" />
         <Compile Include="ServerController.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="ServerSettings.cs" />

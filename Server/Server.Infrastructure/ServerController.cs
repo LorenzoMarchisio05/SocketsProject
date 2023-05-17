@@ -2,6 +2,8 @@
 using System.Collections.Concurrent;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -110,17 +112,17 @@ namespace Server.Infrastructure
             {
                 while (socket.Connected)
                 {
-                    var dataReceived = new byte[1024];
-                    var receivedBytes = socket.Receive(dataReceived);
-                    Array.Resize(ref dataReceived, receivedBytes);
+                    var receivedBytes = ReceiveBytes(socket);
 
-                    var json = Encoding.UTF8.GetString(dataReceived);
-
+                    var json = Encoding.UTF8.GetString(receivedBytes);
+                    
                     Console.WriteLine($"received {receivedBytes} bytes: {json}");
 
                     var stationData = JsonConvert
                         .DeserializeObject<WeatherStationDataDto>(json)
                         .ToWeatherStationData();
+
+                    InsertDataIntoDB(stationData);
 
                     _stationsData.Enqueue(stationData);
 
@@ -144,6 +146,42 @@ namespace Server.Infrastructure
                 socket.Dispose();
             }
             
+        }
+
+        private void InsertDataIntoDB(WeatherStationData stationData)
+        {
+            var query = @"INSERT INTO weatherdata 
+                                    (stationName, temperature, humitidy, date)
+                                    VALUES 
+                                    (@stationName, @temperature, @humitidy, @dateTime)
+                                    ";
+            var command = new SqlCommand
+            {
+                CommandType = CommandType.Text,
+                CommandText = query,
+            };
+
+            command
+                .Parameters
+                .AddRange(new[]
+                {
+                    new SqlParameter("@stationName", SqlDbType.VarChar) { Value = stationData.StationName },
+                    new SqlParameter("@temperature", SqlDbType.Decimal) { Value = stationData.Temperature },
+                    new SqlParameter("@humidity", SqlDbType.Int) { Value = stationData.Humidity },
+                    new SqlParameter("@dateTime", SqlDbType.DateTime) { Value = stationData.DateTime },
+                });
+
+            _settings
+                .AdoNetDBController
+                .ExecuteNonQuery(command);
+        }
+
+        private static byte[] ReceiveBytes(Socket socket)
+        {
+            var dataReceived = new byte[1024];
+            var receivedBytes = socket.Receive(dataReceived);
+            Array.Resize(ref dataReceived, receivedBytes);
+            return dataReceived;
         }
 
         private static void SendAcknowledgement(Socket socket)

@@ -4,7 +4,7 @@ namespace Wheater.Commons.Models
 {
     public sealed class WeatherStationDataDto
     {
-        public int Temperature { get; set; }
+        public float Temperature { get; set; }
         
         public uint Humidity { get; set; }
         

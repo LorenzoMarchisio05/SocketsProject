@@ -9,6 +9,8 @@ namespace Server.Presentation
     {
         public static void Main(string[] args)
         {
+            var adonetController = new AdoNetController("connectionstring...");
+            
             var logger = new FileLogger<ServerController>("log.csv");
             
             using (var server = ServerController.Create(
@@ -18,6 +20,7 @@ namespace Server.Presentation
                    {
                        settings.AddLogger(logger);
                        settings.AddSecondsBetweenLogs(1);
+                       settings.AddDBConnection(adonetController);
                    })) 
             {
                 server.Start();

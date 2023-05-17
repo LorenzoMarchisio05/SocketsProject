@@ -6,7 +6,7 @@ namespace Wheater.Commons.Models
 {
     public sealed class WeatherStationData
     {
-        public int Temperature { get; }
+        public float Temperature { get; }
 
         private uint _humidity;
         
@@ -28,7 +28,7 @@ namespace Wheater.Commons.Models
         
         public string StationName { get; }
         
-        private WeatherStationData(uint humidity, int temperature, DateTime dateTime, string stationName)
+        private WeatherStationData(uint humidity, float temperature, DateTime dateTime, string stationName)
         {
             Humidity = humidity;
             Temperature = temperature;
@@ -36,7 +36,7 @@ namespace Wheater.Commons.Models
             StationName = stationName;
         }
 
-        public static WeatherStationData Create(uint humidity, int temperature, DateTime dateTime, string stationName) => 
+        public static WeatherStationData Create(uint humidity, float temperature, DateTime dateTime, string stationName) => 
             new WeatherStationData(humidity, temperature, dateTime, stationName);
 
         public string ToJsonString() => JsonConvert.SerializeObject(this);
