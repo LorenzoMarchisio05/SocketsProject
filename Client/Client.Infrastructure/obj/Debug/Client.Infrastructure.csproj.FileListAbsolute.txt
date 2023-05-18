@@ -1,0 +1,13 @@
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Client.Infrastructure.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Client.Infrastructure.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Client.Model.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Wheater.Commons.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Newtonsoft.Json.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Wheater.Commons.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Client.Model.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/bin/Debug/Newtonsoft.Json.xml
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/obj/Debug/Client.Infrastructure.csproj.AssemblyReference.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/obj/Debug/Client.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/obj/Debug/Client.Infrastructure.csproj.CopyComplete
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/obj/Debug/Client.Infrastructure.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Infrastructure/obj/Debug/Client.Infrastructure.pdb

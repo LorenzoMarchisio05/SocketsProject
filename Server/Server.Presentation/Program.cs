@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using Server.Infrastructure;
 using Server.Model.Loggers;
@@ -12,18 +13,22 @@ namespace Server.Presentation
             var adonetController = new AdoNetController("connectionstring...");
             
             var logger = new FileLogger<ServerController>("log.csv");
+
+            var server = ServerController.Create(
+                IPAddress.Loopback, 
+                6000, 
+                settings =>
+                {
+                    settings.AddLogger(logger);
+                    settings.AddSecondsBetweenLogs(1);
+                    //settings.AddDBConnection(adonetController);
+                });
             
-            using (var server = ServerController.Create(
-                           IPAddress.Loopback, 
-                           6000, 
-                           settings => 
-                   {
-                       settings.AddLogger(logger);
-                       settings.AddSecondsBetweenLogs(1);
-                       settings.AddDBConnection(adonetController);
-                   })) 
+            using (server) 
             {
                 server.Start();
+
+                Console.ReadKey();
             }
         }
 

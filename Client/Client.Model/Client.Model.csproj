@@ -38,6 +38,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="DateTimeProvider.cs" />
         <Compile Include="Events\ClientConnectionDelegate.cs" />
         <Compile Include="Events\ClientConnectionEventArgs.cs" />
         <Compile Include="Generators\StationDataGenerator.cs" />

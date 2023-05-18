@@ -11,9 +11,7 @@
 /Users/lorenzomarchisio/Desktop/Server/Server.Presentation/obj/Debug/Server.Presentation.pdb
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Presentation.exe
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Presentation.pdb
-/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Application.dll
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Model.dll
-/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Application.pdb
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Model.pdb
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/obj/Debug/Server.Presentation.csproj.AssemblyReference.cache
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/obj/Debug/Server.Presentation.csproj.CoreCompileInputs.cache
@@ -24,3 +22,5 @@
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Wheater.Commons.pdb
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Newtonsoft.Json.dll
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Newtonsoft.Json.xml
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Infrastructure.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation/bin/Debug/Server.Infrastructure.pdb

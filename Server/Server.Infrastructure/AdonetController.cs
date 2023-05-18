@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -13,22 +14,37 @@ namespace Server.Infrastructure
         }
 
 
-        private SqlConnection InitConnection()
+        private bool TryInitConnection(out SqlConnection connection)
         {
-            var connection = new SqlConnection
+            try
             {
-                ConnectionString = _connectionString,
-            };
-            
-            connection.Open();
+                connection = new SqlConnection
+                {
+                    ConnectionString = _connectionString,
+                };
 
-            return connection;
+                connection.Open();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                connection = null;
+                return false;
+            }
         }
         
 
         public DataTable ExecuteQuery(SqlCommand command)
         {
-            using (var connection = InitConnection())
+            var connected = TryInitConnection(out var connection);
+
+            if (!connected)
+            {
+                return default;
+            }
+            
+            using (connection)
             {
                 command.Connection = connection;
 
@@ -44,7 +60,14 @@ namespace Server.Infrastructure
 
         public int ExecuteNonQuery(SqlCommand command)
         {
-            using (var connection = InitConnection())
+            var connected = TryInitConnection(out var connection);
+
+            if (!connected)
+            {
+                return -1;
+            }
+            
+            using (connection)
             {
                 command.Connection = connection;
            
@@ -54,7 +77,14 @@ namespace Server.Infrastructure
         
         public object ExecuteScalar(SqlCommand command)
         {
-            using (var connection = InitConnection())
+            var connected = TryInitConnection(out var connection);
+
+            if (!connected)
+            {
+                return default;
+            }
+            
+            using (connection)
             {
                 command.Connection = connection;
            

@@ -93,7 +93,6 @@ namespace Server.Infrastructure
                 var ipEndpoint = socket.RemoteEndPoint as IPEndPoint;
                 var connectedAt = DateTime.Now.ToLongTimeString();
                 
-                // Debug.Assert(ipEndpoint != null, nameof(ipEndpoint) + " != null");
                 SignalClientAccepted(ipEndpoint, connectedAt);
                 
                 var connectionThread = new Thread(() => HandleConnection(socket));
@@ -103,53 +102,54 @@ namespace Server.Infrastructure
 
         private void HandleConnection(Socket socket)
         {
-            if (socket is null)
+            if (socket is null || !socket.Connected)
             {
                 return;
             }
 
-            try
+            var receivedBytes = ReceiveBytes(socket);
+
+            if (receivedBytes.Length == 0)
             {
-                while (socket.Connected)
-                {
-                    var receivedBytes = ReceiveBytes(socket);
-
-                    var json = Encoding.UTF8.GetString(receivedBytes);
-                    
-                    Console.WriteLine($"received {receivedBytes} bytes: {json}");
-
-                    var stationData = JsonConvert
-                        .DeserializeObject<WeatherStationDataDto>(json)
-                        .ToWeatherStationData();
-
-                    InsertDataIntoDB(stationData);
-
-                    _stationsData.Enqueue(stationData);
-
-                    SendAcknowledgement(socket);
-                }
-            }
-            catch (SocketException)
-            {
-                if (!socket.Connected)
-                {
-                    var ipEndpoint = socket.RemoteEndPoint as IPEndPoint;
-                    Debug.Assert(ipEndpoint != null, nameof(ipEndpoint) + " != null");
-                    var disconnectedAt = DateTime.Now.ToLongTimeString();
-
-                    SignalClientDisconnected(ipEndpoint, disconnectedAt);
-                }
-            }
-            finally
-            {
-                socket.Close();
-                socket.Dispose();
+                DisconnectClient(socket);
+                return;
             }
             
+            SendAcknowledgement(socket);
+
+            var json = Encoding.UTF8.GetString(receivedBytes);
+            
+            Console.WriteLine($"received {receivedBytes.Length} bytes: {json}");
+
+            var stationData = JsonConvert
+                .DeserializeObject<WeatherStationDataDto>(json)
+                .ToWeatherStationData();
+
+            InsertDataIntoDb(stationData);
+
+            _stationsData.Enqueue(stationData);
+
+            DisconnectClient(socket);
         }
 
-        private void InsertDataIntoDB(WeatherStationData stationData)
+        private void DisconnectClient(Socket socket)
         {
+            socket.Shutdown(SocketShutdown.Receive);
+
+            var ipEndpoint = socket.RemoteEndPoint as IPEndPoint;
+            Debug.Assert(ipEndpoint != null, nameof(ipEndpoint) + " != null");
+            var disconnectedAt = DateTime.Now.ToLongTimeString();
+
+            SignalClientDisconnected(ipEndpoint, disconnectedAt);
+        }
+
+        private void InsertDataIntoDb(WeatherStationData stationData)
+        {
+            if (_settings.AdoNetDBController is null)
+            {
+                return;
+            }
+            
             var query = @"INSERT INTO weatherdata 
                                     (stationName, temperature, humitidy, date)
                                     VALUES 
@@ -194,7 +194,6 @@ namespace Server.Infrastructure
 
         private void SignalClientAccepted(IPEndPoint ipEndpoint, string connectedAt)
         {
-            if(ipEndpoint is null) return;
             Console.WriteLine($"Client {ipEndpoint.Address} connected at {connectedAt}");
             ClientConnected?.Invoke(ServerClientConnectionEventArgs
                 .Create(ipEndpoint, connectedAt)
@@ -212,8 +211,8 @@ namespace Server.Infrastructure
         public void Dispose()
         {
             _cts.Cancel();
-
-            _cts.Dispose();
+         
+            _server.Shutdown(SocketShutdown.Both);
             _server.Close();
         }
 

@@ -5,9 +5,9 @@ namespace Client.Model.GeneratorsSettings
 {
     public sealed class WeatherStationDataGenerationSettings
     {
-        internal int MinimumTimeBetweenGenerations { get; set; }
+        public int MinimumTimeBetweenGenerations { get; set; }
         
-        internal int MaximumTimeBetweenGenerations { get; set; }
+        public int MaximumTimeBetweenGenerations { get; set; }
 
         internal int MinimumTemperture { get; set; }
         

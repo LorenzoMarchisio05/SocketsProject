@@ -24,6 +24,7 @@ namespace Server.Model.Loggers
                 Directory.CreateDirectory(folderPath);
             }
 
+            
             var path = Path.Combine(folderPath, filename);
 
             _path = path;
