@@ -62,7 +62,6 @@ namespace Client.Presentation_WinForm
                 {
                     client.Connected += ClientConnectedHandler;
                     client.Disconnected += ClientDisconnectedHandler;
-
                     client.ReceiveSent += ClientTrafficDataHandler;
 
                     if (!client.TryStartConnection())

@@ -21,6 +21,7 @@ namespace Server.Infrastructure
         private readonly ConcurrentQueue<WeatherStationData> _stationsData;
         public event ServerClientConnectionEvent ClientConnected;
         public event ServerClientConnectionEvent ClientDisconnected;
+        public event ServerDataSentEvent Received;
 
         private readonly CancellationTokenSource _cts = new CancellationTokenSource();
 
@@ -116,10 +117,10 @@ namespace Server.Infrastructure
             }
             
             SendAcknowledgement(socket);
+            
+            Received?.Invoke(ServerDataSentEventArgs.Create(receivedBytes));
 
             var json = Encoding.UTF8.GetString(receivedBytes);
-            
-            Console.WriteLine($"received {receivedBytes.Length} bytes: {json}");
 
             var stationData = JsonConvert
                 .DeserializeObject<WeatherStationDataDto>(json)

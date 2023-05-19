@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Client.Model;
+using Client.Model.Enums;
 using Client.Model.Events;
 using Client.Model.Generators;
 using Client.Model.GeneratorsSettings;
@@ -50,6 +51,7 @@ namespace Client.Presentation_Console
                 {
                     client.Connected += ClientConnectedHandler;
                     client.Disconnected += ClientDisconnectedHandler;
+                    client.ReceiveSent += ClientTrafficDataHandler;
 
                     if (!client.TryStartConnection())
                     {
@@ -65,6 +67,14 @@ namespace Client.Presentation_Console
                     client.Send(stationData);
                 }
             }
+        }
+        
+        
+        private static void ClientTrafficDataHandler(ClientDataTrafficEventArgs e)
+        {
+            var operation = e.DataDirection == ClientDataDirection.Sent ? "sent" : "received";
+            var message = $"{e.IPEndPoint.Address} {operation} {e.Bytes.Length} bytes: {e.Data}";
+            Console.WriteLine(message);
         }
 
 

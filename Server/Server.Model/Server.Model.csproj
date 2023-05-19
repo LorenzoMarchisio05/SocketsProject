@@ -40,6 +40,8 @@
     <ItemGroup>
         <Compile Include="Events\ServerClientConnectionEventArgs.cs" />
         <Compile Include="Events\ServerClientConnectionDelegate.cs" />
+        <Compile Include="Events\ServerDataSentDelegate.cs" />
+        <Compile Include="Events\ServerDataSentEventArgs.cs" />
         <Compile Include="Interfaces\ILogger.cs" />
         <Compile Include="Loggers\FileLogger.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

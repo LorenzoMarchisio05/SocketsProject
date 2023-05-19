@@ -23,6 +23,9 @@ namespace Server.Presentation_Console
                     settings.AddSecondsBetweenLogs(1);
                     //settings.AddDBConnection(adonetController);
                 });
+
+            server.Received += (e) => 
+                    Console.WriteLine($"received {e.Bytes.Length}: {e.Data}");
             
             using (server) 
             {
