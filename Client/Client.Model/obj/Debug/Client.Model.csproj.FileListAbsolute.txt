@@ -9,3 +9,14 @@
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/bin/Debug/Wheater.Commons.pdb
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/bin/Debug/Newtonsoft.Json.xml
 /Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Model/obj/Debug/Client.Model.csproj.CopyComplete
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.dll
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.pdb
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Client.Model.dll
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Client.Model.pdb
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Wheater.Commons.dll
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Newtonsoft.Json.dll
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Wheater.Commons.pdb
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Newtonsoft.Json.xml
+\\Mac\Home\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.csproj.CopyComplete

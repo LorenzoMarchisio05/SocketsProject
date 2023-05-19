@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Client.Model.Enums;
 using Client.Model.Events;
 using Wheater.Commons.Models;
 
@@ -14,6 +15,7 @@ namespace Client.Infrastructure
         private const int MAX_CONNECTION_ATTEMPS = 5;
         public event ClientConnectionEvent Connected;
         public event ClientConnectionEvent Disconnected;
+        public event ClientDataTRafficEvent ReceiveSent;
 
         private readonly Socket _client;
 
@@ -78,19 +80,28 @@ namespace Client.Infrastructure
             
             var json = stationData.ToJsonString();
             
-            Console.WriteLine($"Sending: {json}");
-            
             var bytes = Encoding.UTF8.GetBytes(json);
             _client.Send(bytes);
+
+            SignalDataSent(bytes);
 
             var responseBytes = new byte[1024];
             var receivedBytes = _client.Receive(responseBytes);
             Array.Resize(ref responseBytes, receivedBytes);
-            
-            var response = Encoding.UTF8.GetString(responseBytes);
-            Console.WriteLine(response);
-            
+
+            SignalDataReceived(responseBytes);
+
             HandleClientDisconnection();
+        }
+
+        private void SignalDataSent(byte[] bytes)
+        {
+            ReceiveSent?.Invoke(ClientDataTrafficEventArgs.Create(bytes, ClientDataDirection.Sent, _endpoint));
+        }
+
+        private void SignalDataReceived(byte[] bytes)
+        {
+            ReceiveSent?.Invoke(ClientDataTrafficEventArgs.Create(bytes, ClientDataDirection.Received, _endpoint));
         }
 
         private void HandleClientDisconnection()
