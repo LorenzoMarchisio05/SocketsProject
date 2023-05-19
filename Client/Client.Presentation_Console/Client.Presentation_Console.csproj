@@ -4,13 +4,14 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{E015696A-5ECA-4940-B91F-1E0048C7F6EF}</ProjectGuid>
-        <OutputType>Library</OutputType>
+        <ProjectGuid>{C84936DA-1B8B-47E4-87EF-A72B26F338F9}</ProjectGuid>
+        <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Client.Infrastructure</RootNamespace>
-        <AssemblyName>Client.Infrastructure</AssemblyName>
+        <RootNamespace>Client.Presentation_Console</RootNamespace>
+        <AssemblyName>Client.Presentation_Console</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,13 +39,17 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="ClientController.cs" />
+        <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\Wheater.Commons\Wheater.Commons\Wheater.Commons.csproj">
         <Project>{29bd4b35-79bf-4eda-851b-5e667421e283}</Project>
         <Name>Wheater.Commons</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Client.Infrastructure\Client.Infrastructure.csproj">
+        <Project>{e015696a-5eca-4940-b91f-1e0048c7f6ef}</Project>
+        <Name>Client.Infrastructure</Name>
       </ProjectReference>
       <ProjectReference Include="..\Client.Model\Client.Model.csproj">
         <Project>{f2472f8b-76f5-4746-8de0-82f878d8cc8c}</Project>

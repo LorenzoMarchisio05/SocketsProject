@@ -4,13 +4,14 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{E015696A-5ECA-4940-B91F-1E0048C7F6EF}</ProjectGuid>
-        <OutputType>Library</OutputType>
+        <ProjectGuid>{3C61B947-3C71-4BC0-9674-799A9DCDEE78}</ProjectGuid>
+        <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Client.Infrastructure</RootNamespace>
-        <AssemblyName>Client.Infrastructure</AssemblyName>
+        <RootNamespace>Server.Presentation_Console</RootNamespace>
+        <AssemblyName>Server.Presentation_Console</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,17 +39,17 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="ClientController.cs" />
+        <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\Wheater.Commons\Wheater.Commons\Wheater.Commons.csproj">
-        <Project>{29bd4b35-79bf-4eda-851b-5e667421e283}</Project>
-        <Name>Wheater.Commons</Name>
+      <ProjectReference Include="..\Server.Infrastructure\Server.Infrastructure.csproj">
+        <Project>{e856aee0-a503-4054-bf37-b815d7887587}</Project>
+        <Name>Server.Infrastructure</Name>
       </ProjectReference>
-      <ProjectReference Include="..\Client.Model\Client.Model.csproj">
-        <Project>{f2472f8b-76f5-4746-8de0-82f878d8cc8c}</Project>
-        <Name>Client.Model</Name>
+      <ProjectReference Include="..\Server.Model\Server.Model.csproj">
+        <Project>{9c37aea0-ecc2-4f22-98d1-ea7ada7ca9e7}</Project>
+        <Name>Server.Model</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

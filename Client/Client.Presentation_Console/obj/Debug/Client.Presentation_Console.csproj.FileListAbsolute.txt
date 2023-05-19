@@ -1,0 +1,15 @@
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Client.Presentation_Console.exe
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Client.Presentation_Console.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Client.Infrastructure.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Client.Model.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Wheater.Commons.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Newtonsoft.Json.dll
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Wheater.Commons.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Client.Infrastructure.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Client.Model.pdb
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/bin/Debug/Newtonsoft.Json.xml
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/obj/Debug/Client.Presentation_Console.csproj.AssemblyReference.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/obj/Debug/Client.Presentation_Console.csproj.CoreCompileInputs.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/obj/Debug/Client.Presentation_Console.csproj.CopyComplete
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/obj/Debug/Client.Presentation_Console.exe
+/Users/lorenzomarchisio/Desktop/SocketsProject/Client/Client.Presentation_Console/obj/Debug/Client.Presentation_Console.pdb

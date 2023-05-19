@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Infrastructure", "Client.Infrastructure\Client.Infrastructure.csproj", "{E015696A-5ECA-4940-B91F-1E0048C7F6EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Presentation", "Client.Presentation\Client.Presentation.csproj", "{C84936DA-1B8B-47E4-87EF-A72B26F338F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Presentation_Console", "Client.Presentation_Console\Client.Presentation_Console.csproj", "{C84936DA-1B8B-47E4-87EF-A72B26F338F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Model", "Client.Model\Client.Model.csproj", "{F2472F8B-76F5-4746-8DE0-82F878D8CC8C}"
 EndProject

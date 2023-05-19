@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Infrastructure", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Model", "Server.Model\Server.Model.csproj", "{9C37AEA0-ECC2-4F22-98D1-EA7ADA7CA9E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Presentation", "Server.Presentation\Server.Presentation.csproj", "{3C61B947-3C71-4BC0-9674-799A9DCDEE78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Presentation_Console", "Server.Presentation_Console\Server.Presentation_Console.csproj", "{3C61B947-3C71-4BC0-9674-799A9DCDEE78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wheater.Commons", "..\Wheater.Commons\Wheater.Commons\Wheater.Commons.csproj", "{29BD4B35-79BF-4EDA-851B-5E667421E283}"
 EndProject
