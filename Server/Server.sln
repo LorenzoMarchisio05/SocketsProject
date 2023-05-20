@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Presentation_Console
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wheater.Commons", "..\Wheater.Commons\Wheater.Commons\Wheater.Commons.csproj", "{29BD4B35-79BF-4EDA-851B-5E667421E283}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Presentation_WinForm", "Server.Presentation_WinForm\Server.Presentation_WinForm.csproj", "{AE4D2405-84B8-42E8-9D3E-23DE075B329E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{29BD4B35-79BF-4EDA-851B-5E667421E283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29BD4B35-79BF-4EDA-851B-5E667421E283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29BD4B35-79BF-4EDA-851B-5E667421E283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE4D2405-84B8-42E8-9D3E-23DE075B329E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4D2405-84B8-42E8-9D3E-23DE075B329E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4D2405-84B8-42E8-9D3E-23DE075B329E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4D2405-84B8-42E8-9D3E-23DE075B329E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

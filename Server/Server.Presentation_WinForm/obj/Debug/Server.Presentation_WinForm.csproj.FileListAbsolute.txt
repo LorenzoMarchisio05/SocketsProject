@@ -1,0 +1,7 @@
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation_WinForm/obj/Debug/Server.Presentation_WinForm.csproj.AssemblyReference.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation_WinForm/obj/Debug/Client.Presentation_WinForm.FrmServer.resources
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation_WinForm/obj/Debug/Client.Presentation_WinForm.Properties.Resources.resources
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation_WinForm/obj/Debug/Server.Presentation_WinForm.csproj.GenerateResource.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation_WinForm/obj/Debug/Server.Presentation_WinForm.csproj.CoreCompileInputs.cache
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation_WinForm/obj/Debug/Client.Presentation_WinForm.exe
+/Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Presentation_WinForm/obj/Debug/Client.Presentation_WinForm.pdb
