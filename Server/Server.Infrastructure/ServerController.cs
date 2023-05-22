@@ -152,10 +152,9 @@ namespace Server.Infrastructure
             }
             
             var query = @"INSERT INTO weatherdata 
-                                    (stationName, temperature, humitidy, date)
+                                    (stationName, temperature, humitidy, datetime)
                                     VALUES 
-                                    (@stationName, @temperature, @humitidy, @dateTime)
-                                    ";
+                                    (@stationName, @temperature, @humidity, @dateTime)";
             var command = new SqlCommand
             {
                 CommandType = CommandType.Text,

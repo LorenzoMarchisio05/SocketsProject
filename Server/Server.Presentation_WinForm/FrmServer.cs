@@ -20,6 +20,8 @@ namespace Client.Presentation_WinForm
     {
         private const int _port = 6000;
 
+        private const string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\DB\weatherStationDB.mdf;Integrated Security=True;Connect Timeout=30";
+
         public FrmServer()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace Client.Presentation_WinForm
 
         private void serverThreadHandler()
         {
-            var adonetController = new AdoNetController("");
+            var adonetController = new AdoNetController(_connectionString);
 
             var logger = new FileLogger<ServerController>("log.csv");
 
@@ -44,7 +46,7 @@ namespace Client.Presentation_WinForm
                 {
                     settings.AddLogger(logger);
                     settings.AddSecondsBetweenLogs(1);
-                    //settings.AddDBConnection(adonetController);
+                    settings.AddDBConnection(adonetController);
                 });
 
             server.ClientConnected += ServerClientConnectedHandler;
