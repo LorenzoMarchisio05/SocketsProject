@@ -20,3 +20,14 @@
 \\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Wheater.Commons.pdb
 \\Mac\Home\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Newtonsoft.Json.xml
 \\Mac\Home\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.csproj.CopyComplete
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Client.Model.dll
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Client.Model.pdb
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Wheater.Commons.dll
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Wheater.Commons.pdb
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.csproj.AssemblyReference.cache
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.csproj.CoreCompileInputs.cache
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.csproj.CopyComplete
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.dll
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Model\obj\Debug\Client.Model.pdb

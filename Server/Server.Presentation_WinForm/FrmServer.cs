@@ -27,13 +27,19 @@ namespace Client.Presentation_WinForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            var serverThread = new Thread(serverThreadHandler);
+            serverThread.Start();
+        }
+
+        private void serverThreadHandler()
+        {
             var adonetController = new AdoNetController("");
-            
+
             var logger = new FileLogger<ServerController>("log.csv");
 
             var server = ServerController.Create(
-                IPAddress.Loopback, 
-                _port, 
+                IPAddress.Loopback,
+                _port,
                 settings =>
                 {
                     settings.AddLogger(logger);
@@ -44,10 +50,12 @@ namespace Client.Presentation_WinForm
             server.ClientConnected += ServerClientConnectedHandler;
             server.ClientDisconnected += ServerClientDisconnectedHandler;
             server.Received += ServerClientReceivedDataHandler;
-            
+
             using (server)
             {
-                listBoxServer.Items.Add($"Server listening at port {_port}");
+                BeginInvoke(new Action(() => {
+                    listBoxServer.Items.Add($"Server listening at port {_port}");            
+                }));
                 server.Start();
 
                 Console.ReadKey();
@@ -56,23 +64,46 @@ namespace Client.Presentation_WinForm
 
         private void ServerClientReceivedDataHandler(ServerDataSentEventArgs e)
         {
+            if (!AnyFormOpen())
+            {
+                return;
+            }
+            
             var message = $"Received {e.Bytes.Length} bytes: {e.Data}";
             Console.WriteLine(message);
-            listBoxServer.Items.Add(message);
+            BeginInvoke(new Action(() => {
+                listBoxServer.Items.Add(message);
+            }));
         }
 
         private void ServerClientConnectedHandler(ServerClientConnectionEventArgs e)
         {
+            if (!AnyFormOpen())
+            {
+                return;
+            }
+
             var message = $"Client {e.IpEndPoint.Address} connected at {e.ConnectedAt}";
             Console.WriteLine(message);
-            listBoxServer.Items.Add(message);
+            BeginInvoke(new Action(() => {
+                listBoxServer.Items.Add(message);
+            }));
         }
 
         private void ServerClientDisconnectedHandler(ServerClientConnectionEventArgs e)
         {
+            if(!AnyFormOpen())
+            {
+                return;
+            }
+
             var message = $"Client {e.IpEndPoint.Address} disconnected at {e.ConnectedAt}";
             Console.WriteLine(message);
-            listBoxServer.Items.Add(message);
+            BeginInvoke(new Action(() => {
+                listBoxServer.Items.Add(message);
+            }));
         }
+
+        private bool AnyFormOpen() => Application.OpenForms.OfType<FrmServer>().Count() != 0;
     }
 }

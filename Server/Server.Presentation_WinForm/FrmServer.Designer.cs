@@ -34,35 +34,36 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(557, 33);
+            this.btnStart.Location = new System.Drawing.Point(478, 11);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(160, 36);
+            this.btnStart.Size = new System.Drawing.Size(80, 19);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // listBoxClients
+            // listBoxServer
             // 
             this.listBoxServer.FormattingEnabled = true;
-            this.listBoxServer.ItemHeight = 25;
-            this.listBoxServer.Location = new System.Drawing.Point(30, 101);
-            this.listBoxServer.Name = "listBoxClients";
-            this.listBoxServer.Size = new System.Drawing.Size(687, 529);
+            this.listBoxServer.Location = new System.Drawing.Point(15, 53);
+            this.listBoxServer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxServer.Name = "listBoxServer";
+            this.listBoxServer.Size = new System.Drawing.Size(543, 277);
             this.listBoxServer.TabIndex = 2;
             // 
-            // Form1
+            // FrmServer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 644);
+            this.ClientSize = new System.Drawing.Size(569, 335);
             this.Controls.Add(this.listBoxServer);
             this.Controls.Add(this.btnStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmServer";
             this.Text = "Server";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

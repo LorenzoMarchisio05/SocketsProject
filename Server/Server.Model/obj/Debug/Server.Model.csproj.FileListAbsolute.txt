@@ -10,3 +10,9 @@
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Model/obj/Debug/Server.Model.csproj.CoreCompileInputs.cache
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Model/obj/Debug/Server.Model.dll
 /Users/lorenzomarchisio/Desktop/SocketsProject/Server/Server.Model/obj/Debug/Server.Model.pdb
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\Server.Model\bin\Debug\Server.Model.dll
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\Server.Model\bin\Debug\Server.Model.pdb
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\Server.Model\obj\Debug\Server.Model.csproj.AssemblyReference.cache
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\Server.Model\obj\Debug\Server.Model.csproj.CoreCompileInputs.cache
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\Server.Model\obj\Debug\Server.Model.dll
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\Server.Model\obj\Debug\Server.Model.pdb

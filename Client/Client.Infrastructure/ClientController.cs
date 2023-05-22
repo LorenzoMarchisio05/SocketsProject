@@ -77,21 +77,30 @@ namespace Client.Infrastructure
                 HandleClientDisconnection();
                 return;
             }
+
+            try
+            {
+                var json = stationData.ToJsonString();
+
+                var bytes = Encoding.UTF8.GetBytes(json);
+                _client.Send(bytes);
+
+                SignalDataSent(bytes);
+
+                var responseBytes = new byte[1024];
+                var receivedBytes = _client.Receive(responseBytes);
+                Array.Resize(ref responseBytes, receivedBytes);
+
+                SignalDataReceived(responseBytes);
+            }
+            catch(Exception)
+            {
+            }
+            finally
+            {
+                HandleClientDisconnection();
+            }
             
-            var json = stationData.ToJsonString();
-            
-            var bytes = Encoding.UTF8.GetBytes(json);
-            _client.Send(bytes);
-
-            SignalDataSent(bytes);
-
-            var responseBytes = new byte[1024];
-            var receivedBytes = _client.Receive(responseBytes);
-            Array.Resize(ref responseBytes, receivedBytes);
-
-            SignalDataReceived(responseBytes);
-
-            HandleClientDisconnection();
         }
 
         private void SignalDataSent(byte[] bytes)
