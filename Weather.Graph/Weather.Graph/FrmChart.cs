@@ -41,7 +41,10 @@ namespace Weather.Graph
 
                 CreateSeriesOnGraph(page, chart);
 
-
+                chart.Legends.Add(new Legend
+                {
+                    Title = "Graphs"
+                });
 
                 page.Controls.Add(chart);
             }
@@ -52,37 +55,42 @@ namespace Weather.Graph
             var temperatures = new Series("Temperatures");
             var humidities = new Series("Humidity");
 
-            temperatures.ChartType = SeriesChartType.Line;
+            temperatures.ChartType = SeriesChartType.Spline;
             temperatures.Color = Color.Blue;
+            temperatures.IsValueShownAsLabel = true;
+            temperatures.IsVisibleInLegend = true;
 
-            humidities.ChartType = SeriesChartType.Line;
+            humidities.ChartType = SeriesChartType.Spline;
             humidities.Color = Color.Red;
+            humidities.IsValueShownAsLabel = true;
+            humidities.IsVisibleInLegend = true;
 
-            var results = GetTemperatureHumidity(page.Text);
+            var results = GetWeatherDataFromDb(page.Text);
 
             foreach (DataRow row in results.Rows)
             {
                 var temperature = Convert.ToDouble(row[0]);
                 var humidity = Convert.ToInt32(row[1]);
+                var time = row[2]?.ToString();
 
                 temperatures.Points.Add(temperature);
-                temperatures.Points[temperatures.Points.Count - 1].AxisLabel = $"{temperature}";
                 humidities.Points.Add(humidity);
-                humidities.Points[humidities.Points.Count - 1].AxisLabel = $"{humidities}";
+                humidities.Points[humidities.Points.Count - 1].AxisLabel = time;
             }
 
             chart.Series.Add(temperatures);
             chart.Series.Add(humidities);
         }
 
-        private static DataTable GetTemperatureHumidity(string stationName)
+        private static DataTable GetWeatherDataFromDb(string stationName)
         {
             var command = new SqlCommand
             {
                 CommandType = CommandType.Text,
-                CommandText = @"SELECT temperature, humidity
+                CommandText = @"SELECT TOP 25 temperature, humidity, dateTime
                                     FROM weatherdata
-                                    WHERE stationName = @name;"
+                                    WHERE stationName = @name
+                                    ORDER BY id DESC;"
             };
 
 
