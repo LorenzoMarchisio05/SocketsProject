@@ -80,9 +80,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Wheater.Commons\Wheater.Commons\Wheater.Commons.csproj">
-      <Project>{29bd4b35-79bf-4eda-851b-5e667421e283}</Project>
-      <Name>Wheater.Commons</Name>
+    <ProjectReference Include="..\..\Weather.Commons\Weather.Commons\Weather.Commons.csproj">
+      <Project>{29BD4B35-79BF-4EDA-851B-5E667421E283}</Project>
+      <Name>Weather.Commons</Name>
     </ProjectReference>
     <ProjectReference Include="..\Client.Infrastructure\Client.Infrastructure.csproj">
       <Project>{e015696a-5eca-4940-b91f-1e0048c7f6ef}</Project>

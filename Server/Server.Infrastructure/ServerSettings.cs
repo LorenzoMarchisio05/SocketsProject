@@ -1,4 +1,5 @@
 using Server.Model.Interfaces;
+using Wheater.Commons.DB;
 
 namespace Server.Infrastructure
 {

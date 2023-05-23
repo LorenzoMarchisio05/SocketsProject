@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using Server.Model.Interfaces;
 using Server.Model.Events;
-using Wheater.Commons.Models;
+using Weather.Commons.Models;
 
 namespace Server.Infrastructure
 {

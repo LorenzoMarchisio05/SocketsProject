@@ -1,6 +1,6 @@
 using System;
 using Client.Model.GeneratorsSettings;
-using Wheater.Commons.Models;
+using Weather.Commons.Models;
 
 namespace Client.Model.Generators
 {

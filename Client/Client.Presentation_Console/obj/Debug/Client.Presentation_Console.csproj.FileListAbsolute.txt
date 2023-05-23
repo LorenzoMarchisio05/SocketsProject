@@ -29,3 +29,8 @@
 \\Mac\Home\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.csproj.CopyComplete
 \\Mac\Home\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.exe
 \\Mac\Home\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.pdb
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.csproj.AssemblyReference.cache
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.csproj.SuggestedBindingRedirects.cache
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.csproj.CoreCompileInputs.cache
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.exe
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_Console\obj\Debug\Client.Presentation_Console.pdb

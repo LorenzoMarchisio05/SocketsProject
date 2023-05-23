@@ -13,6 +13,7 @@ using Server.Model.Events;
 using System.Net;
 using Server.Infrastructure;
 using Server.Model.Loggers;
+using Wheater.Commons.DB;
 
 namespace Client.Presentation_WinForm
 {

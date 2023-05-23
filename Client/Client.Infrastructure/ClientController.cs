@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using Client.Model.Enums;
 using Client.Model.Events;
-using Wheater.Commons.Models;
+using Weather.Commons.Models;
 
 namespace Client.Infrastructure
 {

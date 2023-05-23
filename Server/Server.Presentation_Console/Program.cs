@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using Server.Infrastructure;
 using Server.Model.Loggers;
+using Wheater.Commons.DB;
 
 namespace Server.Presentation_Console
 {
