@@ -27,6 +27,8 @@ namespace Server.Infrastructure
 
         private readonly ServerSettings _settings;
 
+        private static readonly object _lock = new object();
+
         // Server data
         private Socket _server;
         private readonly IPEndPoint _endpoint;
@@ -150,30 +152,33 @@ namespace Server.Infrastructure
             {
                 return;
             }
-            
-            var query = @"INSERT INTO weatherdata 
-                                    (stationName, temperature, humitidy, datetime)
+
+            lock (_lock)
+            {
+                var query = @"INSERT INTO weatherdata 
+                                    (stationName, temperature, humidity, datetime)
                                     VALUES 
                                     (@stationName, @temperature, @humidity, @dateTime)";
-            var command = new SqlCommand
-            {
-                CommandType = CommandType.Text,
-                CommandText = query,
-            };
-
-            command
-                .Parameters
-                .AddRange(new[]
+                var command = new SqlCommand
                 {
+                    CommandType = CommandType.Text,
+                    CommandText = query,
+                };
+
+                command
+                    .Parameters
+                    .AddRange(new[]
+                    {
                     new SqlParameter("@stationName", SqlDbType.VarChar) { Value = stationData.StationName },
                     new SqlParameter("@temperature", SqlDbType.Decimal) { Value = stationData.Temperature },
                     new SqlParameter("@humidity", SqlDbType.Int) { Value = stationData.Humidity },
                     new SqlParameter("@dateTime", SqlDbType.DateTime) { Value = stationData.DateTime },
-                });
+                    });
 
-            _settings
-                .AdoNetDBController
-                .ExecuteNonQuery(command);
+                _settings
+                    .AdoNetDBController
+                    .ExecuteNonQuery(command);
+            }
         }
 
         private static byte[] ReceiveBytes(Socket socket)

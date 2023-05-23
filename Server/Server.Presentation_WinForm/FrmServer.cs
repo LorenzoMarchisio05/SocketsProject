@@ -21,7 +21,7 @@ namespace Client.Presentation_WinForm
     {
         private const int _port = 6000;
 
-        private const string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\l.marchisio.2268\Desktop\SocketsProject\Server\DB\weatherStationDB.mdf;Integrated Security=True;Connect Timeout=30";
+        private const string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\l.marchisio.2268\Desktop\SocketsProject\DB\weatherStationDB.mdf;Integrated Security=True;Connect Timeout=30";
 
         public FrmServer()
         {

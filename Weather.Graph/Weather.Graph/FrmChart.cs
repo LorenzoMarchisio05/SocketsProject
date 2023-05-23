@@ -20,8 +20,6 @@ namespace Weather.Graph
 
         private static readonly AdoNetController _adoNetController = new AdoNetController(_connectionString);
 
-        private static readonly ChartArea chartArea = new ChartArea();
-
         public FrmChart()
         {
             InitializeComponent();
@@ -30,35 +28,54 @@ namespace Weather.Graph
 
             foreach(TabPage page in tabControlStations.TabPages)
             {
+                var chartArea = new ChartArea();
+
                 var chart = new Chart
                 {
-                    Name = $"chart{page.Name}",
+                    Name = $"chart{page.Text}",
                     Dock = DockStyle.Fill,
                     Parent = page
                 };
 
                 chart.ChartAreas.Add(chartArea);
 
-                Series serie = new Series(page.Name);
-
-                var results = GetTemperatureHumidity(page);
-
-                foreach (DataRow row in results.Rows)
-                {
-                    var temperature = Convert.ToDouble(row[0]);
-                    var humidity = Convert.ToInt32(row[1]);
-
-                    MessageBox.Show($"{temperature} {humidity}");
-                }
+                CreateSeriesOnGraph(page, chart);
 
 
-                chart.Series.Add(serie);
 
                 page.Controls.Add(chart);
             }
         }
 
-        private static DataTable GetTemperatureHumidity(TabPage page)
+        private static void CreateSeriesOnGraph(TabPage page, Chart chart)
+        {
+            var temperatures = new Series("Temperatures");
+            var humidities = new Series("Humidity");
+
+            temperatures.ChartType = SeriesChartType.Line;
+            temperatures.Color = Color.Blue;
+
+            humidities.ChartType = SeriesChartType.Line;
+            humidities.Color = Color.Red;
+
+            var results = GetTemperatureHumidity(page.Text);
+
+            foreach (DataRow row in results.Rows)
+            {
+                var temperature = Convert.ToDouble(row[0]);
+                var humidity = Convert.ToInt32(row[1]);
+
+                temperatures.Points.Add(temperature);
+                temperatures.Points[temperatures.Points.Count - 1].AxisLabel = $"{temperature}";
+                humidities.Points.Add(humidity);
+                humidities.Points[humidities.Points.Count - 1].AxisLabel = $"{humidities}";
+            }
+
+            chart.Series.Add(temperatures);
+            chart.Series.Add(humidities);
+        }
+
+        private static DataTable GetTemperatureHumidity(string stationName)
         {
             var command = new SqlCommand
             {
@@ -68,12 +85,12 @@ namespace Weather.Graph
                                     WHERE stationName = @name;"
             };
 
+
             command
                 .Parameters
-                .Add(new SqlParameter("@name", SqlDbType.VarChar, 75) { Value = page.Name });
+                .Add(new SqlParameter("@name", SqlDbType.VarChar, 75) { Value = stationName });
 
-            var results = _adoNetController.ExecuteQuery(command);
-            return results;
+            return _adoNetController.ExecuteQuery(command);
         }
 
         private void CreateTabs()
@@ -103,7 +120,7 @@ namespace Weather.Graph
 
         private void createTab(string tabName)
         {
-            tabControlStations.TabPages.Add(tabName);
+            tabControlStations.TabPages.Add( new TabPage(tabName) { Name = tabName });
         }
 
     }
