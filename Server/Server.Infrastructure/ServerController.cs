@@ -10,8 +10,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using Server.Model.Interfaces;
-using Server.Model.Events;
+using Server.Entity.Interfaces;
+using Server.Entity.Events;
 using Weather.Commons.Models;
 
 namespace Server.Infrastructure

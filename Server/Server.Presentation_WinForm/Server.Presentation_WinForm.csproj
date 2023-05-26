@@ -92,13 +92,13 @@
       <Project>{f2472f8b-76f5-4746-8de0-82f878d8cc8c}</Project>
       <Name>Client.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Server.Entity\Server.Entity.csproj">
+      <Project>{9c37aea0-ecc2-4f22-98d1-ea7ada7ca9e7}</Project>
+      <Name>Server.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Server.Infrastructure\Server.Infrastructure.csproj">
       <Project>{e856aee0-a503-4054-bf37-b815d7887587}</Project>
       <Name>Server.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Server.Model\Server.Model.csproj">
-      <Project>{9c37aea0-ecc2-4f22-98d1-ea7ada7ca9e7}</Project>
-      <Name>Server.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

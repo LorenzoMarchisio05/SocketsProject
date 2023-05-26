@@ -76,9 +76,9 @@
       <Project>{29BD4B35-79BF-4EDA-851B-5E667421E283}</Project>
       <Name>Weather.Commons</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Server.Model\Server.Model.csproj">
+    <ProjectReference Include="..\Server.Entity\Server.Entity.csproj">
       <Project>{9c37aea0-ecc2-4f22-98d1-ea7ada7ca9e7}</Project>
-      <Name>Server.Model</Name>
+      <Name>Server.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

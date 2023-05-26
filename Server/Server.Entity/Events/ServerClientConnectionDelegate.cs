@@ -1,6 +1,6 @@
 using System;
 
-namespace Server.Model.Events
+namespace Server.Entity.Events
 {
     public delegate void ServerClientConnectionEvent(ServerClientConnectionEventArgs e);
 }

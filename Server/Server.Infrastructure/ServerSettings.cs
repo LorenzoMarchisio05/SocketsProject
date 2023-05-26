@@ -1,4 +1,4 @@
-using Server.Model.Interfaces;
+using Server.Entity.Interfaces;
 using Wheater.Commons.DB;
 
 namespace Server.Infrastructure

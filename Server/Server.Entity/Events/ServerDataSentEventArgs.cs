@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Server.Model.Events
+namespace Server.Entity.Events
 {
     public sealed class ServerDataSentEventArgs
     {

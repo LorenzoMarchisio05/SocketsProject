@@ -1,7 +1,7 @@
 using System;
 using System.Net;
 
-namespace Server.Model.Events
+namespace Server.Entity.Events
 {
     public class ServerClientConnectionEventArgs : EventArgs
     {

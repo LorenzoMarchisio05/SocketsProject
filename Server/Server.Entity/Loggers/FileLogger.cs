@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using Server.Model.Interfaces;
+using Server.Entity.Interfaces;
 
-namespace Server.Model.Loggers
+namespace Server.Entity.Loggers
 {
     public class FileLogger<TClass> : ILogger<TClass>
     {

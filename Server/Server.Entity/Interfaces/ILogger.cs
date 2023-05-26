@@ -1,4 +1,4 @@
-namespace Server.Model.Interfaces
+namespace Server.Entity.Interfaces
 {
     public interface ILogger<T>
     {
