@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net;
 using Server.Infrastructure;
-using Server.Model.Loggers;
+using Server.Entity.Loggers;
 using Wheater.Commons.DB;
 
 namespace Server.Presentation_Console

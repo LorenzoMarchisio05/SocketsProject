@@ -14,8 +14,10 @@ namespace Client.Presentation_WinForm
     public partial class FrmServer : Form
     {
         private const int _port = 6000;
+        
+        private static readonly string DB_FILE = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName, "DB", "weatherStationDB.mdf");
 
-        private const string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\l.marchisio.2268\Desktop\SocketsProject\DB\weatherStationDB.mdf;Integrated Security=True;Connect Timeout=30";
+        private static readonly string _connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={DB_FILE};Integrated Security=True;Connect Timeout=30";
 
         public FrmServer()
         {
