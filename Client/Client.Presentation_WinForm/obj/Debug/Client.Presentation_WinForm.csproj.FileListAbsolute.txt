@@ -22,12 +22,10 @@ C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinF
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Presentation_WinForm.exe
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Presentation_WinForm.pdb
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Infrastructure.dll
-C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Model.dll
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Wheater.Commons.dll
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Newtonsoft.Json.dll
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Wheater.Commons.pdb
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Infrastructure.pdb
-C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Model.pdb
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Newtonsoft.Json.xml
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\obj\Debug\Client.Presentation_WinForm.csproj.AssemblyReference.cache
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\obj\Debug\Client.Presentation_WinForm.csproj.SuggestedBindingRedirects.cache
@@ -38,3 +36,5 @@ C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinF
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\obj\Debug\Client.Presentation_WinForm.exe
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\obj\Debug\Client.Presentation_WinForm.pdb
 C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\obj\Debug\Client.Presentation_WinForm.FrmClient.resources
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Entity.dll
+C:\Users\l.marchisio.2268\Desktop\SocketsProject\Client\Client.Presentation_WinForm\bin\Debug\Client.Entity.pdb

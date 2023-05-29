@@ -3,8 +3,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using Client.Model.Enums;
-using Client.Model.Events;
+using Client.Entity.Enums;
+using Client.Entity.Events;
 using Weather.Commons.Models;
 
 namespace Client.Infrastructure

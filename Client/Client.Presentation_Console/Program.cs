@@ -3,11 +3,11 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using Client.Model;
-using Client.Model.Enums;
-using Client.Model.Events;
-using Client.Model.Generators;
-using Client.Model.GeneratorsSettings;
+using Client.Entity.Enums;
+using Client.Entity.Events;
+using Client.Entity.Generators;
+using Client.Entity.GeneratorsSettings;
+using Client.Entity;
 
 namespace Client.Presentation_Console
 {
