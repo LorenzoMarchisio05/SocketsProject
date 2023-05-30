@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace Weather.Graph
 {
     public partial class FrmChart : Form
     {
-        private const string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\l.marchisio.2268\Desktop\SocketsProject\DB\weatherStationDB.mdf;Integrated Security=True;Connect Timeout=30";
+        private static readonly string DB_FILE = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "DB", "weatherStationDB.mdf");
+
+        private static readonly string _connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={DB_FILE};Integrated Security=True;Connect Timeout=30";
 
         private static readonly AdoNetController _adoNetController = new AdoNetController(_connectionString);
 

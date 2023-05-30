@@ -15,7 +15,7 @@ namespace Client.Presentation_WinForm
     {
         private const int _port = 6000;
         
-        private static readonly string DB_FILE = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName, "DB", "weatherStationDB.mdf");
+        private static readonly string DB_FILE = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "DB", "weatherStationDB.mdf");
 
         private static readonly string _connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={DB_FILE};Integrated Security=True;Connect Timeout=30";
 

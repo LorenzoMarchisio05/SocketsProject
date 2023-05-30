@@ -89,7 +89,7 @@ namespace Server.Infrastructure
 
         private void Accept()
         {
-            while (true)
+            while (!_cts.IsCancellationRequested)
             {
                 var socket = _server.Accept();
 
